@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="landing1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h3 class="title">We are coming soon...</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ex, consequatur voluptas eius incidunt, cupiditate eos sed obcaecati non odit unde corporis sint dolor sequi quaerat neque numquam similique!</p>
+
+        
+            <div class="countdown">
+                <div class="box">
+                    <h3 id="day">00</h3>
+                    <span>Day</span>
+                </div>
+
+                <div class="box">
+                    <h3 id="hour">00</h3>
+                    <span>Hour</span>
+                </div>
+
+                <div class="box">
+                    <h3 id="minutes">00</h3>
+                    <span>Minutes</span>
+                </div>
+
+                <div class="box">
+                    <h3 id="seconds">00</h3>
+                    <span>Seconds</span>
+                </div>
+
+                
+
+            
+
+            </div>
+            <a href="#" class="btn">Notify Me</a>
+        </div>
+            
+
+        <div class="image"><img src="https://demo.wpbeaveraddons.com/wp-content/uploads/2018/02/main-vector.png" alt="maintenance"></div>
+        
+
+
+    </div>
+    <script>
+        let countDate= new Date('feb 1,2023 00:00:00').getTime();
+
+        function countDown(){
+            let now= new Date().getTime();
+            gap= countDate-now;
+            let second=1000;
+            let minute=second*60;
+            let hour=minute*60;
+            let day=hour*24;
+
+            let d=Math.floor(gap/day);
+            let h=Math.floor((gap%day)/hour);
+            let m=Math.floor((gap%hour)/minute);
+            let s=Math.floor((gap%minute)/second);
+
+
+            document.getElementById('day').innerText=d;
+            document.getElementById('hour').innerText=h;
+            document.getElementById('minutes').innerText=m;
+            document.getElementById('seconds').innerText=s;
+
+        }
+
+        setInterval(function(){
+            countDown();
+        },1000)
+
+       
+            
+        
+    </script>
+    
+</body>
+</html>
